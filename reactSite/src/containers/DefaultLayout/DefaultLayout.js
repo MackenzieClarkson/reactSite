@@ -34,7 +34,9 @@ class DefaultLayout extends Component {
 
   render() {
     return (
+
       <div className="app">
+        
         <AppHeader fixed>
           <Suspense  fallback={this.loading()}>
             <DefaultHeader onLogout={e=>this.signOut(e)}/>
@@ -54,6 +56,7 @@ class DefaultLayout extends Component {
             <AppBreadcrumb appRoutes={routes}/>
             <Container fluid>
               <Suspense fallback={this.loading()}>
+
                 <Switch>
                   {routes.map((route, idx) => {
                     return route.component ? (

@@ -1,6 +1,6 @@
 {
-  "short_name": "CoreUI-React",
-  "name": "CoreUI-React sample",
+  "short_name": "React Space Tracker",
+  "name": "React Site",
   "icons": [
     {
       "src": "./assets/img/favicon.png",

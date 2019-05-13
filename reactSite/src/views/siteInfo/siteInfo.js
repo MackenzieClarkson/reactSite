@@ -1,5 +1,5 @@
-import React, { Component, lazy, Suspense } from 'react';
-import { Bar, Line } from 'react-chartjs-2';
+import React, {Component, lazy, Suspense} from 'react';
+import {Bar, Line} from 'react-chartjs-2';
 import {
   Badge,
   Button,
@@ -23,38 +23,97 @@ import {
   CardSubtitle,
   CardText
 } from 'reactstrap';
-import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
-import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities'
+import {CustomTooltips} from '@coreui/coreui-plugin-chartjs-custom-tooltips';
+import {getStyle, hexToRgba} from '@coreui/coreui/dist/js/coreui-utilities'
 
-class siteInfo extends Component{
+class siteInfo extends Component {
+  constructor(props) {
+    super(props);
+    this.passedProp = props.match.params.prop
+    console.log(this.passedProp)
+    this.passProp = this.passProp.bind(this);
+  }
+  passProp() {
+    var myProp = 'Proppy'
+    this.props.history.push('/playground')
+  }
+  render() {
+    return (<Row>
+      <Col>
+        <Card class="col">
+          <CardImg src="/assets/img/react.png" alt="Card image cap"/>
+          <CardBody>
+            <CardTitle>
+              <h2>
+                React
+              </h2>
+            </CardTitle>
+            <CardSubtitle>
+              <h4>
+                Front-End JavaScript Library
+              </h4>
 
-render(){
-  return (
+            </CardSubtitle>
+            <CardText>
+              React has become an industry standard in Front-end Development. Particularly in JavaScript based Stacks. Used and produced by Facebook, React is capable of building Powerful SPAs (Single Page Applications).
+            </CardText>
+            <Button href="https://reactjs.org/">
+              React
+            </Button>
+          </CardBody>
+        </Card>
+      </Col>
+      <Col>
+        <Card class="col">
+          <CardImg src="/assets/img/bootstrap3.png" />
+          <CardBody>
+            <CardTitle>
+              <h3>
+                Bootstrap
+              </h3>
 
-<Row>
-  <Col xs="12" sm="6" lg="3">
-  <Card>
-<CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-<CardBody>
-  <CardTitle>Card title</CardTitle>
-  <CardSubtitle>Card subtitle</CardSubtitle>
-  <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-  <Button>Button</Button>
-</CardBody>
-</Card>
-  </Col>
+            </CardTitle>
+            <CardSubtitle>
+              <h4>
+                Styling Library
+              </h4>
 
-  <Col xs="12" sm="6" lg="3">
-    <Card className="text-white bg-primary">
-      <CardBody className="pb-0">
+            </CardSubtitle>
+            <CardText>
+              Bootstrap is a very popular styling framework especially useful for responsive (mobile-friendly) pages. This site uses the ReactStrap implementation.
+            </CardText>
+            <Button href="https://reactstrap.github.io/">
+              ReactStrap
+            </Button>
+          </CardBody>
+        </Card>
+      </Col>
+      <Col>
+        <Card class="col">
+          <CardImg src="/assets/img/nasa.png" alt="Card image cap"/>
+          <CardBody>
+            <CardTitle>
+              <h3>
+                NASA API
+              </h3>
 
-      </CardBody>
+            </CardTitle>
+            <CardSubtitle>
+              <h4>
+                Public API containing up-to-date data and images
+              </h4>
 
-    </Card>
-  </Col>
-
-
-</Row>
-)}
+            </CardSubtitle>
+            <CardText>
+              Public resource containing links to images, videos, and live data for everything astronomy and geography.
+            </CardText>
+            <Button href="https://api.nasa.gov/">
+              NASA
+            </Button>
+          </CardBody>
+        </Card>
+      </Col>
+    </Row>)
+  }
 }
 export default siteInfo;
