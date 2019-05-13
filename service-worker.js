@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/spaceTracker/precache-manifest.1c9d20aa81e15dae2b4533c4bdb4799b.js"
+  "/reactSite/precache-manifest.37ce7a9bd97eb92b4102ffea1744447f.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/spaceTracker/index.html", {
+workbox.routing.registerNavigationRoute("/reactSite/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
